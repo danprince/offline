@@ -10,14 +10,15 @@ let attr = (element, attr, value) => {
 }
 
 export let nodes = {
+  body: document.body,
   root: get("#root"),
   canvas: get("#canvas"),
   showcase: get("#showcase"),
   testInput: get("#test-input")
 }
 
-export let setMode = mode => attr(nodes.root, "x-mode", mode);
-export let setLevel = level => attr(nodes.root, "x-level", level);
+export let setMode = mode => attr(nodes.body, "x-mode", mode);
+export let setLevel = level => attr(nodes.body, "x-level", level);
 export let setCursor = cursor => canvas.style.cursor = cursor;
 export let getTestInput = () => nodes.testInput.value;
 
