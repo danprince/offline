@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Rebuild the net</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body x-keydown="shortcut">
+    <div id="root" class="window" x-mode="edit" x-level="0">
+      <div id="showcase"></div>
+      <div id="editor">
+        <canvas id="canvas" x-click="click" x-mousemove="hover" x-mousedown="mousedown" x-mouseup="mouseup"></canvas>
+        <div id="test-runner" class="panel">
+          <div class="test-items">
+            <div class="test-item test-passed">
+              <span class="expected">FF</span>
+              <span class="actual">FF</span>
+            </div>
+            <div class="test-item test-failed">
+              <span class="expected">01</span>
+              <span class="actual">00</span>
+            </div>
+            <div class="test-item">
+              <span class="expected">FF</span>
+              <span class="actual"></span>
+            </div>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div x-view="editor">
+            <button x-click="run">▶ Run</button>
+            <hr class="vr" />
+            <button x-click="add" x-id="left">←</button>
+            <button x-click="add" x-id="up">↑</button>
+            <button x-click="add" x-id="down">↓</button>
+            <button x-click="add" x-id="right">→</button>
+            <hr class="vr" />
+            <button class="if" x-click="add" x-id="lt">&lt;</button>
+            <button class="if" x-click="add" x-id="gt">&gt;</button>
+            <button class="if" x-click="add" x-id="eq">=</button>
+            <button class="if" x-click="add" x-id="neq">!=</button>
+            <hr class="vr" />
+            <button class="reg" x-click="add" x-id="register_a">A</button>
+            <button class="reg" x-click="add" x-id="register_b">B</button>
+            <button class="reg" x-click="add" x-id="register_c">C</button>
+            <button class="reg" x-click="add" x-id="register_d">D</button>
+            <hr class="vr" />
+            <button x-click="add" x-id="inc">+</button>
+          </div>
+          <div x-view="runner">
+            <button x-click="edit">← Edit</button>
+            <hr class="vr" />
+            <button x-click="run">▶ Start</button>
+            <button x-click="step">↴ Step</button>
+            <button x-click="reset">↻ Reset</button>
+            <hr class="vr" />
+            <button class="test" x-click="test">Test</button>
+            <input type="text" size="2" id="test-input" placeholder="0" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="0.js"></script>
+  </body>
+</html>
+

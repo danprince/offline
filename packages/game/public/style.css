@@ -1,0 +1,166 @@
+/* Structural */
+
+[x-view] { display: none; }
+[x-mode=editor] [x-view=editor] { display: initial; }
+[x-mode=runner] [x-view=runner] { display: initial; }
+
+
+/* Layout */
+#root {
+  position: absolute;
+  width: 768px;
+  height: 526px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#test-runner {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+/* Theme */
+
+body {
+  background: #111;
+  color: #fff;
+  font-family: "Monaco", "Consolas", monospace;
+}
+
+.window {
+  background: #1b1b1b;
+  border-radius: 4px;
+  border: solid 1px #000;
+}
+
+.toolbar {
+  border-top: solid 1px #111;
+  font-size: 10pt;
+  padding: 8px;
+}
+
+.toolbar input {
+  background: #111;
+  border: solid 1px transparent;
+  color: #fff;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 2px 4px;
+  text-align: right;
+  outline: none;
+}
+
+button {
+  border: solid 1px #000;
+  background: #111;
+  color: #aaa;
+  font: inherit;
+  padding: 2px 4px;
+  outline: none;
+  border-radius: 2px;
+  min-width: 23px;
+}
+
+button:hover {
+  color: #fff;
+  background: #222;
+}
+
+button:active {
+  background: #111;
+}
+
+button.if {
+  background: blue;
+  color: white;
+}
+
+button.if:hover {
+  background: #5c7bff;
+}
+
+button.if:active {
+  background: blue;
+}
+
+button.reg {
+  background: #f71f7e;
+  color: white;
+}
+
+button.reg:hover {
+  background: #ff77b3;
+  color: white;
+}
+
+button.reg:active {
+  background: #f71f7e;
+  color: white;
+}
+
+.panel {
+  background: #1b1b1b;
+  padding: 8px;
+  border: solid 1px #000;
+  border-radius: 4px;
+}
+
+.test-items {
+  font-size: 10pt;
+  background: #111;
+  padding: 8px;
+  border: solid 1px #000;
+}
+
+.test-item {
+  padding: 4px;
+}
+
+.test-passed {
+  color: green;
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.test-failed {
+  color: red;
+  background: rgba(255, 0, 0, 0.1);
+}
+
+/* Utility */
+
+body {
+  user-select: none;
+}
+
+hr.vr {
+  display: inline-block;
+  height: 1em;
+  background: #111;
+  width: 1px;
+  transform: translateY(3px);
+  border: 0;
+  margin: 0 4px;
+}
+
+/* Showcase */
+
+#showcase {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.4);
+  transform: translate(385px, 264px);
+  transition-property: transform;
+  transition-duration: 500ms;
+  display: none;
+}
+
+[x-showcase] {
+  border-bottom: dashed 1px #aaa;
+}

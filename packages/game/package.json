@@ -1,0 +1,12 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "scripts start index.js",
+    "build": "scripts build index.js",
+    "clean": "scripts clean"
+  },
+  "devDependencies": {
+    "scripts": "1.0.0"
+  }
+}

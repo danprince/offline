@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+let path = require("path");
+
+let commands = {
+  start: require("./start"),
+  build: require("./build"),
+  clean: require("./clean")
+};
+
+let cmd = process.argv[2] || "start";
+let entry = process.argv[3] || "./index.js";
+let root = process.cwd();
+
+let kb = n => n * 1024;
+
+let paths = {
+  root: root,
+  build: path.join(root, "build"),
+  public: path.join(root, "public"),
+};
+
+let files = {
+  entry: path.join(paths.root, entry),
+  bundle: path.join(paths.build, "0.js"),
+  zip: path.join(paths.root, "release.zip"),
+};
+
+let limit = kb(13);
+
+let project = { paths, files, limit };
+
+let exec = commands[cmd];
+
+if (exec === undefined) {
+  throw new Error(`No such command as ${cmd}`);
+}
+
+exec(project).catch(err => console.error(err));

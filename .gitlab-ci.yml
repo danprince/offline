@@ -1,0 +1,23 @@
+image: node:latest
+
+before_script:
+  - apt-get update -qq
+  - apt-get install -y -qq zip
+
+cache:
+  paths:
+    - node_modules/
+    - .yarn
+
+# deploy:
+#   stage: deploy
+#   script:
+#     - yarn install
+#     - yarn build
+#     - yarn deploy
+#   artifacts:
+#     paths:
+#       - "release.zip"
+#   only:
+#     - master
+
