@@ -85,25 +85,22 @@ export function renderWires() {
   let { path } = trace(sim.entities()[0]);
 
   ctx.save();
-  ctx.beginPath();
   ctx.strokeStyle = "blue";
   ctx.setLineDash([5, 5]);
   ctx.lineDashOffset = -driver.ticks() / 4;
   ctx.lineWidth = 3;
 
+  ctx.beginPath();
+
   for (let node of path) {
     let { x, y } = node.position;
 
-    if (node.split) {
-      // need path from current node to this split
-      //ctx.fillStyle = "yellow";
-      ctx.moveTo(x * uw, y * uh);
-    } else {
-      ctx.lineTo(x * uw, y * uh);
-      //ctx.fillStyle = "blue";
+    if (node.from) {
+      let from = node.from;
+      ctx.moveTo(from.position.x * uw, from.position.y * uh);
     }
 
-    //ctx.fillRect(x * uw - 5, y * uh - 5, 10, 10);
+    ctx.lineTo(node.position.x * uw, y * uh);
   }
 
   ctx.stroke();
