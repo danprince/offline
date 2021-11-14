@@ -1,6 +1,8 @@
 # Offline
 Post apocalypse, one programmer has to rebuild the internet
 
+![image](https://user-images.githubusercontent.com/1266011/141681367-902977ef-125d-4be0-aec4-bcbe214c9239.png)
+
 Programming has changed a lot since 2018.
 
 Game starts with diary entries in terminal.
